@@ -2,13 +2,12 @@
 
 EOP proof-of-concept exploit for the Capcom.sys "rootkit" driver, where it has an IOCTL that takes a usermode buffer + disables SMEP for you
 
-####Things to keep in mind:
+#### Things to keep in mind:
 
-- For a 32bit system, the input and output buffers for DeviceIoControl both need to be 4
-- For a 64bit system, the input buffer for DeviceIoControl needs to be 8 and the output buffer needs to be 4
-
-- The function that provides the IOCTL, 0AA012044h is for 32bit, 0AA013044h for 64bit
-- The device name is `Htsysm72FB`, you can get this from devicetree 
+1. For a 32bit system, the input and output buffers for DeviceIoControl both need to be 4
+2. For a 64bit system, the input buffer for DeviceIoControl needs to be 8 and the output buffer needs to be 4
+3. The function that provides the IOCTL, 0AA012044h is for 32bit, 0AA013044h for 64bit
+4. The device name is `Htsysm72FB`, you can get this from devicetree 
 
 The function that gives both vulnerable IOCTLs
 
